@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Content Provider</string>
+    <string name="user_name">User Name</string>
+    <string name="add_user_name">Add User Name</string>
+
+    <string name="delete_user_byID">DELETE Contect By ID</string>
+    <string name="find_user_byID">FIND Contact By ID</string>
+    <string name="add_new_user">Add New Contact</string>
+
+    <string name="show_contact">SHOW CONTACTS</string>
+    <string name="show_list_contact">SHOW CONTACTS LIST</string>
+    <string name="field_required">Ce champ est obligatoire.</string>
+    <string name="userID_todelete">ID TO DELETE</string>
+    <string name="userID_tofind">ID TO FIND</string>
+    <string name="userName_toadd">NAME TO ADD</string>
+</resources>

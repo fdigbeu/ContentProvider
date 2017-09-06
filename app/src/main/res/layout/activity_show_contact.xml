@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="lveapp.fr.contenprovider.ShowContactActivity">
+
+    <Button
+        android:id="@+id/showContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="@string/show_list_contact"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/userIDToDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/userID_todelete"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/userIDToFind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/userID_tofind"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/userNameToAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/userName_toadd"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:inputType="text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/deleteUserByID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:text="@string/delete_user_byID"/>
+
+            <Button
+                android:id="@+id/findUserByID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:text="@string/find_user_byID"/>
+
+            <Button
+                android:id="@+id/addUserByName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:text="@string/add_new_user"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/listContacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>
