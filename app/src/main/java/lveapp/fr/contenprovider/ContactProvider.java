@@ -17,13 +17,16 @@ import java.util.HashMap;
 
 public class ContactProvider extends ContentProvider {
 
+    // Content provider
     static final String PROVIDER_NAME = "lveapp.fr.contentprovider.ContactProvider";
     static final String CP_CONTACTS = "cpcontacts";
     static final String URL = "content://"+PROVIDER_NAME+"/"+CP_CONTACTS;
     static final Uri CONTENT_URL = Uri.parse(URL);
 
+    // Table fields
     static final String id = "id";
     static final String name = "name";
+    // Uri code
     static final int uriCode = 1;
 
     private static HashMap<String, String> mValues;
@@ -36,6 +39,8 @@ public class ContactProvider extends ContentProvider {
     }
 
     private static SQLiteDatabase sqlDB;
+
+    // Database infos
     static final String DATABASE_NAME = "myContacts";
     static final String TABLE_NAME = "names";
     static final int DATABASE_VERSION = 1;
@@ -43,9 +48,15 @@ public class ContactProvider extends ContentProvider {
             " (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "name TEXT NOT NULL);";
 
-    public ContactProvider() {
-    }
+    public ContactProvider() {}
 
+    /**
+     * Delete data
+     * @param uri
+     * @param selection
+     * @param selectionArgs
+     * @return
+     */
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         int rowsDeleted = 0;
@@ -70,6 +81,12 @@ public class ContactProvider extends ContentProvider {
         }
     }
 
+    /**
+     * Insert data
+     * @param uri
+     * @param values
+     * @return
+     */
     @Override
     public Uri insert(Uri uri, ContentValues values) {
         long rowID = sqlDB.insert(TABLE_NAME, null, values);
@@ -84,6 +101,10 @@ public class ContactProvider extends ContentProvider {
         }
     }
 
+    /**
+     * When contactProvider is created
+     * @return
+     */
     @Override
     public boolean onCreate() {
         DataBaseHelper dbHelper = new DataBaseHelper(getContext());
@@ -94,6 +115,15 @@ public class ContactProvider extends ContentProvider {
         return false;
     }
 
+    /**
+     * Query
+     * @param uri
+     * @param projection
+     * @param selection
+     * @param selectionArgs
+     * @param sortOrder
+     * @return
+     */
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
@@ -111,6 +141,14 @@ public class ContactProvider extends ContentProvider {
         return cursor;
     }
 
+    /**
+     * Update data
+     * @param uri
+     * @param values
+     * @param selection
+     * @param selectionArgs
+     * @return
+     */
     @Override
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
@@ -126,6 +164,9 @@ public class ContactProvider extends ContentProvider {
         return rowsUpdate;
     }
 
+    /**
+     * Custom of SQLiteOpenHelper
+     */
     private static class DataBaseHelper extends SQLiteOpenHelper{
 
         public DataBaseHelper(Context context) {
